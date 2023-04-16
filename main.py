@@ -1,12 +1,11 @@
 import discord
+import os
 from discord.ext import commands
 import datetime
 import time
 
 bot = commands.Bot(command_prefix='!',intents=discord.Intents.all())
 bot.work_start_time = datetime.datetime.now()
-
-token = "MTA4Njg3NzQ5MjIzMDUwNDU0OA.Gomk-z.XZU-cc7RDUnI8-0dGPpelexEWQ9DbHGjLF6zvY"
 
 def is_user(user_id):
     def predicate(ctx):
@@ -43,5 +42,5 @@ async def 퇴근(ctx):
 
     await ctx.send(embed=embed)
 
-
-bot.run(token)
+access token = os.environ["BOT_TOKEN"]
+bot.run(access token)
